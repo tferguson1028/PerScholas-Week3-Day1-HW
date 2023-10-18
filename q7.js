@@ -5,19 +5,31 @@
   For example, reverseString('rockstar'); would return the string "ratskcor".
 */
 
+// function reverseString(string)
+// {
+//   if(typeof string === 'undefined' || typeof string === 'null')
+//     return null;
+  
+//   string = String(string);
+//   let charArr = String(string); //Copying the string for safety. Works without doing this.
+//   for(char of charArr)
+//   {
+//     console.log(string);
+//     string = String(char + string).substring(0, string.length);
+//   }
+  
+//   return string;
+// }
+
 function reverseString(string)
 {
   if(typeof string === 'undefined' || typeof string === 'null')
     return null;
   
-  string = String(string);
-  let charArr = String(string); //Copying the string for safety. Works without doing this.
-  for(char of charArr)
-  {
-    console.log(string);
-    string = String(char + string).substring(0, string.length);
-  }
-  
+  let stringArr = String(string).split(""); // Convert string to arr of separated chars.
+  string = "";
+  while(stringArr.length > 0)
+    string += stringArr.pop();
   return string;
 }
 
